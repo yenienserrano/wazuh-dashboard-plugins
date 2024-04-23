@@ -119,9 +119,13 @@ jobs:
         run: |
           echo "test{{}}"
           echo {{ matrix.plugins.path }}
-          cd ./wazuh
+          cd ./wazuh/.github
           pwd
           ls -la
+          cd ./actions
+          pwd
+          ls -la
+          cd ../../../
 
       - name: Step 05 - Upload coverage results to GitHub
         if: ${{ inputs.notify_jest_coverage_summary && github.event_name == 'pull_request' }}
