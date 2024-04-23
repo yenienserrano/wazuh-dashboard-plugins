@@ -119,6 +119,7 @@ jobs:
         run: |
           echo "test{{}}"
           echo {{ matrix.plugins.path }}
+          cd ./wazuh
           pwd
           ls -la
 
