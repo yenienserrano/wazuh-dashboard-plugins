@@ -5,7 +5,7 @@ import { useUserPreferences } from '../hooks';
 
 export const DismissNotificationCheck = () => {
   const [dismissFutureUpdates, setDismissFutureUpdates] = useState<boolean>();
-  console.log('first1');
+  console.log('first2');
   const { userPreferences, error, isLoading, updateUserPreferences } =
     useUserPreferences();
 
