@@ -124,7 +124,7 @@ jobs:
 
       - name: Step 05 - Upload coverage results to GitHub
         if: ${{ inputs.notify_jest_coverage_summary && github.event_name == 'pull_request' }}
-        uses: ./.github/actions/comment-test-coverage/action.yml
+        uses: ./wazuh/.github/actions/comment-test-coverage/action.yml
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           path: ./${{ matrix.plugins.path }}/target/test-coverage/coverage-summary.json
