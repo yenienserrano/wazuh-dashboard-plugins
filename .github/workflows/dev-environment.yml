@@ -115,10 +115,10 @@ jobs:
           path: ${{ matrix.plugins.path }}/${{ inputs.artifact_path }}
           if-no-files-found: 'error'
 
-      # - name: Step 05 - Upload coverage results to GitHub
-      #   if: ${{ inputs.notify_jest_coverage_summary && github.event_name == 'pull_request' }}
-      #   uses: lucianogorza/comment-test-coverage@1.0.3
-      #   with:
-      #     token: ${{ secrets.GITHUB_TOKEN }}
-      #     path: ./${{ matrix.plugins.path }}/target/test-coverage/coverage-summary.json
-      #     title: '${{ matrix.plugins.name }} plugin code coverage (Jest) test'
+      - name: Step 05 - Upload coverage results to GitHub
+        if: ${{ inputs.notify_jest_coverage_summary && github.event_name == 'pull_request' }}
+        uses: ./.github/actions/comment-test-coverage
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: ./${{ matrix.plugins.path }}/target/test-coverage/coverage-summary.json
+          title: '${{ matrix.plugins.name }} plugin code coverage (Jest) test'

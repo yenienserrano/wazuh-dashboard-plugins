@@ -1,6 +1,6 @@
 {
   "name": "output-test-coverage",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,12 +11,6 @@
     "url": "git+https://github.com/lucianogorza/comment-test-coverage.git"
   },
   "keywords": [],
-  "author": "Luciano Gorza",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lucianogorza/comment-test-coverage/issues"
-  },
-  "homepage": "https://github.com/lucianogorza/comment-test-coverage#readme",
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0"
