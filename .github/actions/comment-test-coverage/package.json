@@ -6,10 +6,6 @@
   "scripts": {
     "package": "ncc build index.js -o dist"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lucianogorza/comment-test-coverage.git"
-  },
   "keywords": [],
   "dependencies": {
     "@actions/core": "^1.2.6",
