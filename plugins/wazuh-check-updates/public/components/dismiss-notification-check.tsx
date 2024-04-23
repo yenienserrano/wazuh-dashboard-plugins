@@ -5,8 +5,9 @@ import { useUserPreferences } from '../hooks';
 
 export const DismissNotificationCheck = () => {
   const [dismissFutureUpdates, setDismissFutureUpdates] = useState<boolean>();
-
-  const { userPreferences, error, isLoading, updateUserPreferences } = useUserPreferences();
+  console.log('first4');
+  const { userPreferences, error, isLoading, updateUserPreferences } =
+    useUserPreferences();
 
   useEffect(() => {
     if (isLoading) {
@@ -26,27 +27,27 @@ export const DismissNotificationCheck = () => {
   return (
     <I18nProvider>
       <EuiCheckbox
-        id="check-dismiss"
+        id='check-dismiss'
         label={
           <span>
             <FormattedMessage
-              id="wazuhCheckUpdates.dismissNotificationCheck.checkText"
-              defaultMessage="Disable updates notifications"
+              id='wazuhCheckUpdates.dismissNotificationCheck.checkText'
+              defaultMessage='Disable updates notifications'
             />{' '}
             <EuiToolTip
               content={
                 <FormattedMessage
-                  id="wazuhCheckUpdates.dismissNotificationCheck.checkHelp"
-                  defaultMessage="This setting determines if a notification will appear every time an update is released"
+                  id='wazuhCheckUpdates.dismissNotificationCheck.checkHelp'
+                  defaultMessage='This setting determines if a notification will appear every time an update is released'
                 />
               }
             >
-              <EuiIcon type="questionInCircle" color="primary" />
+              <EuiIcon type='questionInCircle' color='primary' />
             </EuiToolTip>
           </span>
         }
         checked={dismissFutureUpdates}
-        onChange={(e) => handleOnChange(e.target.checked)}
+        onChange={e => handleOnChange(e.target.checked)}
         disabled={isLoading}
       />
     </I18nProvider>
