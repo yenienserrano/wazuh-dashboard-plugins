@@ -47,17 +47,18 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        plugins: [
-            # {
-            #   name: 'Main',
-            #   path: 'wazuh/plugins/main',
-            #   container_path: 'wazuh',
-            # },
-            # {
-            #   name: 'Wazuh Check Updates',
-            #   path: 'wazuh/plugins/wazuh-check-updates',
-            #   container_path: 'wazuh-check-updates',
-            # },
+        plugins:
+          [
+            {
+              name: 'Main',
+              path: 'wazuh/plugins/main',
+              container_path: 'wazuh',
+            },
+            {
+              name: 'Wazuh Check Updates',
+              path: 'wazuh/plugins/wazuh-check-updates',
+              container_path: 'wazuh-check-updates',
+            },
             {
               name: 'Wazuh Core',
               path: 'wazuh/plugins/wazuh-core',
