@@ -115,6 +115,13 @@ jobs:
           path: ${{ matrix.plugins.path }}/${{ inputs.artifact_path }}
           if-no-files-found: 'error'
 
+      - name: test
+        run: |
+          echo "test{{}}"
+          echo {{ matrix.plugins.path }}
+          pwd
+          ls -la
+
       - name: Step 05 - Upload coverage results to GitHub
         if: ${{ inputs.notify_jest_coverage_summary && github.event_name == 'pull_request' }}
         uses: ./.github/actions/comment-test-coverage/action.yml
