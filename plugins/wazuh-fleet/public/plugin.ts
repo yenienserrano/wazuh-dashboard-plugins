@@ -80,6 +80,8 @@ export class WazuhFleetPlugin
       indexPatterns: [{ id: getIndexPattern().getIndexPatternId() }],
     });
 
+    console.log('test actions')
+
     // TODO: This setter should be local to fleet management instead of using the related to the plugin itself. This approach was done because the integration of FleetManagement is using another setter from plugin-services.
     setAgentManagement(
       AgentManagement({
